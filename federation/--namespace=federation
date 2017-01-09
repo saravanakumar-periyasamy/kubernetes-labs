@@ -1,0 +1,2 @@
+NAME         CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+kubernetes   10.87.240.1   <none>        443/TCP   1h

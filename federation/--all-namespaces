@@ -1,0 +1,4 @@
+NAME          STATUS    AGE
+default       Active    1h
+federation    Active    1h
+kube-system   Active    1h

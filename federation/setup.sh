@@ -68,7 +68,7 @@ kubectl --context="gke_${GCP_PROJECT}_us-central1-b_gce-us-central1" \
   --namespace=federation \
   create -f pvc/federation-apiserver-etcd.yaml
 
-sleep 5m
+sleep 300
 
 FEDERATED_API_SERVER_ADDRESS=$(kubectl --context="gke_${GCP_PROJECT}_us-central1-b_gce-us-central1" \
   --namespace=federation \
@@ -124,6 +124,10 @@ kubectl --context="gke_${GCP_PROJECT}_us-central1-b_gce-us-central1" \
 
 kubectl --context=federation-cluster \
   apply -f clusters/gce-us-east1.yaml
+
+sleep 120
+
+kubectl --context=federation-cluster get clusters
 
 kubectl --context=federation-cluster create -f rs/nginx.yaml
 kubectl --context=federation-cluster create -f services/nginx.yaml
